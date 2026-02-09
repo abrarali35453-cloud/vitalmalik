@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alti Growth - Vital Health Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a3d52;
+            --vital-green: #28a745;
+            --med-light: #e0f2f1;
+            --dark-red: #d9534f;
+            --discount-gold: #ffcc00;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Arabic', sans-serif;
+            margin: 0; padding: 0; 
+            /* Subtle Medical Background Pattern */
+            background-color: #f4f7f9;
+            background-image: radial-gradient(#d1e3e9 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* NEW PROFESSIONAL TOP BAR */
+        .top-brand-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-bottom: 4px solid var(--vital-green);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .top-brand-bar .v-check {
+            background: #2e86de;
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-brand-bar span {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(180deg, var(--med-light) 0%, #f4f7f9 100%);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .celeb-image-container {
+            width: 100%; max-width: 600px; border-radius: 20px;
+            overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            margin-bottom: -40px; z-index: 2;
+        }
+
+        .celeb-image-container img { width: 100%; display: block; object-fit: cover; }
+
+        .hero-content {
+            width: 90%; max-width: 700px; background: white;
+            padding: 60px 30px 30px 30px; border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); z-index: 1;
+            text-align: center; border: 1px solid #e0e0e0;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .lang-urdu { direction: rtl; font-family: 'Noto Sans Arabic', serif; display: block; }
+
+        .cause-card {
+            background: #fff; padding: 20px; border-radius: 15px; margin-bottom: 15px;
+            border-left: 5px solid var(--dark-red); box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .science-box {
+            background: #ffffff; padding: 30px; border-radius: 20px;
+            margin: 40px 0; border: 1px dashed var(--vital-green);
+        }
+
+        .nutrient-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; 
+            margin: 40px auto; max-width: 500px; justify-content: center;
+        }
+
+        .n-card { 
+            background: white; aspect-ratio: 1 / 1; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            border-radius: 15px; border: 1px solid var(--med-light); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;
+        }
+
+        .results-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 30px 0;
+        }
+        @media (min-width: 768px) { .results-grid { grid-template-columns: repeat(3, 1fr); } }
+        .result-box { border-radius: 12px; overflow: hidden; border: 2px solid #eee; background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .result-box img { width: 100%; display: block; object-fit: cover; }
+
+        .product-focus { text-align: center; margin-top: 50px; }
+        .bottle-img { max-width: 320px; width: 85%; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2)); }
+
+        .discount-bar {
+            background: #0a3d52; color: white; padding: 20px; border-radius: 15px;
+            margin: -25px auto 40px; max-width: 480px; display: flex;
+            justify-content: space-around; align-items: center;
+            box-shadow: 0 12px 25px rgba(10, 61, 82, 0.3); position: relative;
+        }
+
+        .tag-45 { background: var(--discount-gold); color: black; padding: 4px 12px; border-radius: 8px; font-weight: bold; font-size: 0.8rem; position: absolute; top: -15px; right: 20px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% {transform: scale(1);} 50% {transform: scale(1.1);} 100% {transform: scale(1);} }
+        .price-old { text-decoration: line-through; opacity: 0.6; font-size: 1.2rem; }
+        .price-new { font-size: 2.5rem; font-weight: bold; }
+
+        .submit-btn { background: var(--vital-green); color: white; border: none; padding: 18px; font-size: 1.4rem; border-radius: 50px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; box-shadow: 0 8px 15px rgba(40, 167, 69, 0.3); }
+        input { width: 100%; padding: 16px; margin: 12px 0; border: 1px solid #ddd; border-radius: 12px; box-sizing: border-box; }
+        
+        #order { background: white; padding: 40px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 2px solid var(--vital-green); }
+    </style>
+</head>
+<body>
+
+<div class="top-brand-bar">
+    <div class="v-check">✓</div>
+    <span>Vital Health Official</span>
+</div>
+
+<section class="hero-section">
+    <div class="celeb-image-container">
+        <img src="sameera.jpeg" alt="Ambassador">
+    </div>
+    <div class="hero-content">
+        <h1 style="font-size: 3rem; margin: 0; color: var(--primary);">Alti Growth</h1>
+        <p class="lang-urdu" style="font-size: 1.5rem; color: #8B4513;">اپنی شخصیت اور قد کو نئی بلندیوں پر لے جائیں</p>
+        <p><strong>International Research Formula • Doctor Recommended</strong></p>
+        <a href="#order" class="submit-btn" style="width: auto; padding: 12px 40px; font-size: 1.1rem;">Order Now / ابھی آرڈر کریں</a>
+    </div>
+</section>
+
+<div class="container">
+
+    <div style="margin-top: 60px; text-align: center;">
+        <h2 style="color: var(--dark-red);">Major Causes & Challenges of Height Issues</h2>
+        <p class="lang-urdu">قد نہ بڑھنے کی اصل وجوہات اور درپیش مشکلات</p>
+    </div>
+
+    <div class="cause-card">
+        <strong>1. Nutritional Deficiency (غذائی کمی):</strong>
+        <p>Modern diet lacks the specific minerals needed to keep "Growth Plates" active. Without these, bones harden too early.</p>
+    </div>
+
+    <div class="cause-card">
+        <strong>2. Growth Hormone Decline (ہارمونز کی کمی):</strong>
+        <p>The Pituitary gland often slows down due to stress or lack of specific nutrients, stopping the signaling for height increase.</p>
+    </div>
+
+    <div class="cause-card">
+        <strong>3. Social & Mental Impact (ذہنی دباؤ):</strong>
+        <p>Short height often leads to low self-confidence, difficulty in professional selections (Police/Army), and social anxiety.</p>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 50px 0;">
+
+    <div style="text-align: center;">
+        <h2 style="color: var(--primary);">The Alti Growth Solution</h2>
+        <p class="lang-urdu">یہ فارمولا ہڈیوں کو کیسے دوبارہ متحرک کرتا ہے؟</p>
+    </div>
+
+    <div class="science-box">
+        <p><strong>Bone Pore Activation:</strong> This formula opens microscopic pores in your bones, allowing <strong>Calcium</strong> and <strong>Phosphorus</strong> to penetrate deep for density and growth.</p>
+        <p><strong>Blood Circulation:</strong> It enhances oxygen supply to the growth plates, ensuring nutrients are delivered to the ends of long bones.</p>
+        <p><strong>Hormonal Boost:</strong> Naturally stimulates HGH (Human Growth Hormones) to restart the elongation process.</p>
+        <p><strong>Better Sleep:</strong> Regulates the sleep cycle so your body can grow during the "Golden Hours" of night recovery.</p>
+    </div>
+
+    <div class="nutrient-grid">
+        <div class="n-card"><strong>Calcium</strong><span class="lang-urdu">کیلشیم</span></div>
+        <div class="n-card"><strong>Magnesium</strong><span class="lang-urdu">میگنیشیم</span></div>
+        <div class="n-card"><strong>Vitamin D3</strong><span class="lang-urdu">وٹامن ڈی 3</span></div>
+        <div class="n-card"><strong>Phosphorus</strong><span class="lang-urdu">فاسفورس</span></div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <h2 style="color: var(--primary);">Real Results / حیرت انگیز نتائج</h2>
+        <div class="results-grid">
+            <div class="result-box"><img src="result1.jpeg" alt="Result 1"></div>
+            <div class="result-box"><img src="result2.png" alt="Result 2"></div>
+            <div class="result-box"><img src="result3.png" alt="Result 3"></div>
+            <div class="result-box"><img src="result4.png" alt="Result 4"></div>
+            <div class="result-box"><img src="result5.png" alt="Result 5"></div>
+            <div class="result-box"><img src="result6.jpeg" alt="Result 6"></div>
+        </div>
+    </div>
+
+    <div class="product-focus">
+        <img src="mic.png" alt="Product" class="bottle-img">
+        <div class="discount-bar">
+            <div class="tag-45">SAVE 45% OFF</div>
+            <div style="text-align: left;">
+                <span class="price-old">Rs. 8,000</span><br>
+                <span class="price-new">Rs. 4,500</span>
+            </div>
+            <div style="font-size: 0.85rem; text-align: right; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px;">
+                FREE HOME DELIVERY<br>CASH ON DELIVERY
+            </div>
+        </div>
+    </div>
+
+    <section id="order">
+        <h3 style="color: var(--vital-green); font-size: 1.8rem; margin-top: 0; text-align: center;">Confirm Your Order</h3>
+        <form>
+            <input type="text" placeholder="Full Name / آپ کا نام" required>
+            <input type="text" placeholder="Phone Number / موبائل نمبر" required>
+            <input type="text" placeholder=" City / شہر " required>
+            <button type="submit" class="submit-btn" style="margin-top: 15px;">BOOK MY ORDER NOW</button>
+        </form>
+    </section>
+
+    <footer style="margin: 60px 0; text-align: center; color: #999; font-size: 0.8rem;">
+        © 2026 Vital Health Alti Growth.
+    </footer>
+</div>
+
+</body>
+</html>
